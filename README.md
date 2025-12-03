@@ -26,17 +26,60 @@ The primary goals of this research are to:
 | Semi-Supervised Learning | MixMatch | 91.27% | 30% |
 | Semi-Supervised Learning | MeanTeacher | 81% | 30% |
 
-## 🌾 Dataset Information
+## 🎓 Methodology Pipeline
+<img width="703" height="510" alt="Screenshot 2025-12-03 105018" src="https://github.com/user-attachments/assets/a1701600-e9dd-4211-83fa-d97abd26e17b" />
 
-- **Source**: Mendeley public repository
-- **Origin**: Bangladesh (Raipur, Lakshmipur, Camperhat regions)
-- **Original Images**: 1,000 betel leaf samples
-- **Augmented Images**: 2,589 total samples
-- **Classes**: 4 categories
-  - Healthy Leaf
-  - Fungal Brown Spot Disease
-  - Dried Leaf Disease
-  - Bacterial Leaf Disease
+### Procedure Pipeline to Classify Betel Leaf Disease
+
+The complete pipeline consists of:
+1. Dataset collection and preprocessing
+2. Data augmentation and splitting
+3. Parallel supervised learning with three pre-trained models (InceptionV3, EfficientNet, DenseNet-201)
+4. Semi-supervised learning integration (FixMatch, MixMatch, MeanTeacher)
+5. Explainable AI visualization with DenseNet-201
+6. Performance evaluation and model comparison
+7. Real-time web application deployment
+
+## 📋 Dataset Classes & Characteristics
+
+### Betel Leaf Varieties
+<img width="680" height="185" alt="Screenshot 2025-12-03 105728" src="https://github.com/user-attachments/assets/8f87b2aa-e752-4af8-9a9f-342f3a1b5d77" />
+
+**Healthy Leaf**
+- Vivid green color
+- Smooth texture
+- No yellow or brown spots
+- No dark areas or holes
+
+**Fungal Brown Spot Disease**
+- Miniature asymmetric brown spots
+- Yellowish halo around spots
+- Gradual expansion from center to edges
+- Potential leaf deformation
+
+**Dried Leaf Disease**
+- Yellow-brown hue
+- Drying symptoms from edges inward
+- Folded appearance
+- May turn completely brown in extreme cases
+
+**Bacterial Leaf Disease**
+- Pale yellow discoloration
+- Blackish dark patches
+- Rotting symptoms
+- Yellow haze around affected areas
+
+## 📸 Data Augmentation Details
+<img width="684" height="255" alt="image" src="https://github.com/user-attachments/assets/95a74ea0-feb0-41c8-995f-3f3a04054361" />
+
+1. **Image Resizing**: Original 600×800 pixels → 224×224 pixels
+2. **Data Augmentation** (Roboflow):
+   - Horizontal flipping
+   - Rotation and brightness adjustments
+   - Contrast adjustments
+   - Dataset expansion: 250 → 570+ images per class
+3. **Data Splitting**: 80% training, 20% testing
+4. **Normalization**: Pixel values scaled to [0,1] range
 
 ## 🏗️ Architecture Overview
 
@@ -232,61 +275,6 @@ Strong augmentation applies multiple aggressive transformations including poster
 ** B. Original vs Weak Augmentation**
 
 Weak augmentation applies only mild transformations including horizontal flipping, random rotation, and moderate shifting to maintain consistent predictions for pseudo-labeling.
-
-## 📸 Data Augmentation Details
-<img width="684" height="255" alt="image" src="https://github.com/user-attachments/assets/95a74ea0-feb0-41c8-995f-3f3a04054361" />
-
-1. **Image Resizing**: Original 600×800 pixels → 224×224 pixels
-2. **Data Augmentation** (Roboflow):
-   - Horizontal flipping
-   - Rotation and brightness adjustments
-   - Contrast adjustments
-   - Dataset expansion: 250 → 570+ images per class
-3. **Data Splitting**: 80% training, 20% testing
-4. **Normalization**: Pixel values scaled to [0,1] range
-
-## 🎓 Methodology Pipeline
-<img width="703" height="510" alt="Screenshot 2025-12-03 105018" src="https://github.com/user-attachments/assets/a1701600-e9dd-4211-83fa-d97abd26e17b" />
-
-### Procedure Pipeline to Classify Betel Leaf Disease
-
-The complete pipeline consists of:
-1. Dataset collection and preprocessing
-2. Data augmentation and splitting
-3. Parallel supervised learning with three pre-trained models (InceptionV3, EfficientNet, DenseNet-201)
-4. Semi-supervised learning integration (FixMatch, MixMatch, MeanTeacher)
-5. Explainable AI visualization with DenseNet-201
-6. Performance evaluation and model comparison
-7. Real-time web application deployment
-
-## 📋 Dataset Classes & Characteristics
-
-### Betel Leaf Varieties
-<img width="680" height="185" alt="Screenshot 2025-12-03 105728" src="https://github.com/user-attachments/assets/8f87b2aa-e752-4af8-9a9f-342f3a1b5d77" />
-
-**Healthy Leaf**
-- Vivid green color
-- Smooth texture
-- No yellow or brown spots
-- No dark areas or holes
-
-**Fungal Brown Spot Disease**
-- Miniature asymmetric brown spots
-- Yellowish halo around spots
-- Gradual expansion from center to edges
-- Potential leaf deformation
-
-**Dried Leaf Disease**
-- Yellow-brown hue
-- Drying symptoms from edges inward
-- Folded appearance
-- May turn completely brown in extreme cases
-
-**Bacterial Leaf Disease**
-- Pale yellow discoloration
-- Blackish dark patches
-- Rotting symptoms
-- Yellow haze around affected areas
 
 ## 🔍 Semi-Supervised Learning Impact
 
