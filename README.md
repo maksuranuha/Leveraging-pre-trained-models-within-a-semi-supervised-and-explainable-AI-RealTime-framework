@@ -27,7 +27,6 @@ The primary goals of this research are to:
 | Semi-Supervised Learning | MeanTeacher | 81% | 30% |
 
 ## 🎓 Methodology Pipeline
-<img width="703" height="510" alt="Screenshot 2025-12-03 105018" src="https://github.com/user-attachments/assets/a1701600-e9dd-4211-83fa-d97abd26e17b" />
 
 ### Procedure Pipeline to Classify Betel Leaf Disease
 
