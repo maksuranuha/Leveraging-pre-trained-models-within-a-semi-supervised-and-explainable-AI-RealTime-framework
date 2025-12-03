@@ -297,26 +297,6 @@ Strong augmentation applies multiple aggressive transformations including poster
 
 Weak augmentation applies only mild transformations including horizontal flipping, random rotation, and moderate shifting to maintain consistent predictions for pseudo-labeling.
 
-## 📊 Comparative Analysis
-
-<img width="766" height="406" alt="Screenshot 2025-12-03 105115" src="https://github.com/user-attachments/assets/9b7ccf51-3966-4af6-b855-e275cf48c50f" />
-### Comparison Between Supervised and Semi-Supervised Models
-The bar chart comparison clearly demonstrates:
-
-**Per-Class Performance:**
-- **Bacterial Leaf**: DenseNet-201 achieves near-perfect performance; FixMatch maintains high accuracy
-- **Dried Leaf**: All models achieve 100% accuracy on this class
-- **Fungal Brown Spot Disease**: DenseNet-201 and FixMatch both reach 100% accuracy
-- **Healthy Leaf**: Consistent performance across models with minor variations
-
-**Overall Accuracy Rankings:**
-1. DenseNet-201 (Supervised): 99.23%
-2. FixMatch (Semi-Supervised): 98% with only 30% labeled data
-3. EfficientNetV2 (Supervised): 97.31%
-4. MixMatch (Semi-Supervised): 91.27%
-5. InceptionV3 (Supervised): 92.72%
-6. MeanTeacher (Semi-Supervised): 81%
-
 ## 🔍 Explainable AI Visualization
 
 <img width="855" height="192" alt="Screenshot 2025-12-03 105121" src="https://github.com/user-attachments/assets/b9046302-ba34-4e4e-89f9-5b01ca799229" />
