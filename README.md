@@ -26,6 +26,28 @@ The primary goals of this research are to:
 | Semi-Supervised Learning | MixMatch | 91.27% | 30% |
 | Semi-Supervised Learning | MeanTeacher | 81% | 30% |
 
+## Semi-Supervised Learning Impact
+
+### Table : Several Label Data Implementations with Varied Ratio and Threshold Values
+
+| Label Data (%) | Threshold | Validation Accuracy (%) | Test Accuracy (%) | Bacterial Leaf Disease (%) | Dried Leaf (%) | Fungal Brown Spot Disease (%) | Healthy Leaf (%) | Epoch | Training Time (min) |
+|---|---|---|---|---|---|---|---|---|---|
+| 30% | 0.75 | 91% | 98% | 100% | 100% | 100% | 93% | 25 | 16.41 |
+| 20% | 0.75 | 88% | 96% | 100% | 100% | 95% | 93% | 25 | 10.49 |
+| 10% | 0.75 | 56% | 57% | 100% | 100% | 33% | 21% | 13 | 5.18 |
+| 5% | 0.75 | 48% | 41% | 100% | 9% | 14% | 21% | 17 | 6.51 |
+| 30% | 0.80 | 89% | 96% | 100% | 100% | 95% | 93% | 25 | 16.54 |
+| 30% | 0.85 | 87% | 94% | 100% | 100% | 91% | 89% | 25 | 16.62 |
+| 30% | 0.90 | 79% | 76% | 100% | 100% | 43% | 71% | 9 | 6.01 |
+| 40% | 0.75 | 91% | 98% | 100% | 100% | 95% | 93% | 25 | 19.48 |
+| 50% | 0.75 | 94% | 98.8% | 100% | 100% | 100% | 96% | 25 | 30.12 |
+
+**Key Findings:**
+- 30% labeled data with 0.75 threshold achieves optimal 98% accuracy
+- Higher thresholds (0.80-0.95) result in lower accuracy due to stricter pseudo-label filtering
+- Lower labeled data percentages (5-10%) show significant accuracy drops
+- 50% labeled data shows only marginal improvement (0.8%) over 30% with 83% more labeling effort
+  
 ## 🎓 Methodology Pipeline
 
 ### Procedure Pipeline to Classify Betel Leaf Disease
@@ -183,7 +205,7 @@ Four XAI visualization methods were integrated with DenseNet-201:
 - **Recall**: True positive rate among actual positives
 - **F1-Score**: Harmonic mean of precision and recall
 
-### Table 7: Classification Report of Supervised Models
+### Table : Classification Report of Supervised Models
 
 | Model | Class Name | Precision | Recall | F1-score | Accuracy |
 |-------|-----------|-----------|--------|----------|----------|
@@ -203,7 +225,7 @@ Four XAI visualization methods were integrated with DenseNet-201:
 | | Healthy Leaf | 0.96 | 0.96 | 0.96 | 0.96 |
 | | **Overall Accuracy** | | | | **97.31%** |
 
-### Table 8: Classification Report of Semi-Supervised Models
+### Table : Classification Report of Semi-Supervised Models
 
 | Model | Class Name | Precision | Recall | F1-score | Accuracy |
 |-------|-----------|-----------|--------|----------|----------|
@@ -225,7 +247,7 @@ Four XAI visualization methods were integrated with DenseNet-201:
 
 ## 📊 Model Execution Times
 
-### Table 9: Supervised Model Evaluation with Execution Time
+### Table : Supervised Model Evaluation with Execution Time
 
 | Model Name | Execution Time (minutes) |
 |-----------|--------------------------|
@@ -275,28 +297,6 @@ Strong augmentation applies multiple aggressive transformations including poster
 
 Weak augmentation applies only mild transformations including horizontal flipping, random rotation, and moderate shifting to maintain consistent predictions for pseudo-labeling.
 
-## 🔍 Semi-Supervised Learning Impact
-
-### Table 11: Several Label Data Implementations with Varied Ratio and Threshold Values
-
-| Label Data (%) | Threshold | Validation Accuracy (%) | Test Accuracy (%) | Bacterial Leaf Disease (%) | Dried Leaf (%) | Fungal Brown Spot Disease (%) | Healthy Leaf (%) | Epoch | Training Time (min) |
-|---|---|---|---|---|---|---|---|---|---|
-| 30% | 0.75 | 91% | 98% | 100% | 100% | 100% | 93% | 25 | 16.41 |
-| 20% | 0.75 | 88% | 96% | 100% | 100% | 95% | 93% | 25 | 10.49 |
-| 10% | 0.75 | 56% | 57% | 100% | 100% | 33% | 21% | 13 | 5.18 |
-| 5% | 0.75 | 48% | 41% | 100% | 9% | 14% | 21% | 17 | 6.51 |
-| 30% | 0.80 | 89% | 96% | 100% | 100% | 95% | 93% | 25 | 16.54 |
-| 30% | 0.85 | 87% | 94% | 100% | 100% | 91% | 89% | 25 | 16.62 |
-| 30% | 0.90 | 79% | 76% | 100% | 100% | 43% | 71% | 9 | 6.01 |
-| 40% | 0.75 | 91% | 98% | 100% | 100% | 95% | 93% | 25 | 19.48 |
-| 50% | 0.75 | 94% | 98.8% | 100% | 100% | 100% | 96% | 25 | 30.12 |
-
-**Key Findings:**
-- 30% labeled data with 0.75 threshold achieves optimal 98% accuracy
-- Higher thresholds (0.80-0.95) result in lower accuracy due to stricter pseudo-label filtering
-- Lower labeled data percentages (5-10%) show significant accuracy drops
-- 50% labeled data shows only marginal improvement (0.8%) over 30% with 83% more labeling effort
-
 ## 📊 Comparative Analysis
 
 <img width="766" height="406" alt="Screenshot 2025-12-03 105115" src="https://github.com/user-attachments/assets/9b7ccf51-3966-4af6-b855-e275cf48c50f" />
@@ -339,7 +339,7 @@ This visualization demonstrates four XAI techniques applied to a diseased betel 
 
 ## 🌟 Research Contributions
 
-### Table 13: Numerical Comparison of Previous Studies and Our Study
+### Table : Numerical Comparison of Previous Studies and Our Study
 
 | Studies | Dataset Size | Classes | Best Model | Accuracy |
 |---------|--------------|---------|-----------|----------|
@@ -358,22 +358,6 @@ This visualization demonstrates four XAI techniques applied to a diseased betel 
 - Comprehensive 4-class disease categorization
 - Real-time interpretable predictions through XAI integration
 - Practical web application deployment
-
-## 🌐 Real-Time Web Application
-
-A Flask and React-based web application provides user-friendly disease detection:
-
-**Features**
-- Drag-and-drop image upload (PNG, JPG, SVG formats)
-- Real-time disease classification with confidence scores
-- XAI heatmap visualization highlighting affected regions
-- User-friendly interface for farmers and agricultural professionals
-- Inference time: ~2.07 seconds per image
-
-**Technology Stack**
-- Backend: Flask REST API
-- Frontend: React
-- Model Serving: TensorFlow/Keras
 
 ## 🚀 Future Directions
 
@@ -412,7 +396,7 @@ This framework offers transformative benefits for betel leaf cultivation:
 - **Employment**: Creates opportunities for agricultural technology specialists
 - **Sustainability**: Supports food security and sustainable farming practices
 
-## 📞 Application Use Cases
+## Application Use Cases
 
 - Farmer disease diagnosis in cultivation fields
 - Quality assurance in processing facilities
@@ -421,7 +405,3 @@ This framework offers transformative benefits for betel leaf cultivation:
 - Crop yield optimization through early intervention
 
 ---
-
-**Research Team**: Md Tahsin, Maksura Binte Rabbani Nuha, Sumaiya Akter, Al Hossain, Mohammad Rifat Ahmmad Rashid, Raiha Ul Islam, Mohammad Shahadat Hossain
-
-**Affiliations**: East West University, International Islamic University Chittagong, University of Chittagong
