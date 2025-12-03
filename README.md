@@ -1,0 +1,2 @@
+# Leveraging-pre-trained-models-within-a-semi-supervised-and-explainable-AI-RealTime-framework
+This study applied deep learning to Betel leaf disease detection, reducing reliance on manual inspection. DenseNet201 performed best with 99.23% accuracy. Using only 30% labeled data, FixMatch exceeded MixMatch and MeanTeacher, reaching 98% accuracy, showing strong semi-supervised potential for practical usage in today's world. 
