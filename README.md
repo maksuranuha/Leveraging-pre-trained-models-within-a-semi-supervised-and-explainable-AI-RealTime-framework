@@ -1,5 +1,7 @@
 # Betel Leaf Disease Detection using Semi-Supervised Learning and Explainable AI
+
 DOI: https://doi.org/10.1016/j.jafr.2025.102142
+
 Journal: Journal of Agriculture and Food Research, Volume 22 (2025), Article 102142
 
 ## 📋 Overview
