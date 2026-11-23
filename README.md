@@ -1,8 +1,31 @@
-# Betel Leaf Disease Detection using Semi-Supervised Learning and Explainable AI
+# Betel Leaf Disease Detection with Semi-Supervised Learning and Explainable AI
 
-DOI: https://doi.org/10.1016/j.jafr.2025.102142
+> A comparative research implementation of supervised transfer learning, FixMatch, MixMatch, Mean Teacher, and explainability methods for four-class betel-leaf disease recognition.
 
-Journal: Journal of Agriculture and Food Research, Volume 22 (2025), Article 102142
+**Associated publication:** *Leveraging Pre-trained Models within a Semi-Supervised and Explainable AI Real-Time Framework: A Pioneering Paradigm for Betel Leaf Disease Detection*<br>
+**Journal:** *Journal of Agriculture and Food Research*, Volume 22, Article 102142<br>
+**Published:** August 2025<br>
+**DOI:** [10.1016/j.jafr.2025.102142](https://doi.org/10.1016/j.jafr.2025.102142)
+
+## Provenance and collaboration
+
+This repository is a provenance-preserving fork of the [canonical research-code repository](https://github.com/maksuranuha/Leveraging-pre-trained-models-within-a-semi-supervised-and-explainable-AI-RealTime-framework) maintained by **Maksura Binte Rabbani Nuha**. The fork retains the original Git history and is presented by co-author **Md Tahsin** as part of a shared research portfolio.
+
+## Architecture at a glance
+
+```mermaid
+flowchart LR
+    D[Betel-leaf images] --> S[Supervised benchmark]
+    D --> L[Labeled subset]
+    D --> U[Unlabeled subset]
+    S --> B[DenseNet201 baseline]
+    L --> F[FixMatch / MixMatch / Mean Teacher]
+    U --> F
+    F --> E[Evaluation]
+    B --> E
+    E --> X[SmoothGrad / Saliency / GradCAM++ / ScoreCAM]
+    X --> R[Interpretable prediction workflow]
+```
 
 ## 📋 Overview
 
